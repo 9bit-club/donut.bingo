@@ -1,4 +1,3 @@
-use crate::BBRules;
 use anchor_lang::prelude::*;
 use anchor_spl::token;
 use anchor_spl::token::{Mint, TokenAccount};
@@ -27,7 +26,7 @@ pub fn bb_and_donuts<'info>(
     d8: Box<Account<'info, TokenAccount>>,
     d9: Box<Account<'info, TokenAccount>>,
 ) -> Result<()> {
-    let _burn_BB_tx = anchor_spl::token::burn(
+    let _burn_bb_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -39,7 +38,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D1_tx = anchor_spl::token::burn(
+    let _burn_d1_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -51,7 +50,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D2_tx = anchor_spl::token::burn(
+    let _burn_d2_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -63,7 +62,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D3_tx = anchor_spl::token::burn(
+    let _burn_d3_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -75,7 +74,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D4_tx = anchor_spl::token::burn(
+    let _burn_d4_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -87,7 +86,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D5_tx = anchor_spl::token::burn(
+    let _burn_d5_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -99,7 +98,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D6_tx = anchor_spl::token::burn(
+    let _burn_d6_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -111,7 +110,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D7_tx = anchor_spl::token::burn(
+    let _burn_d7_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -123,7 +122,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D8_tx = anchor_spl::token::burn(
+    let _burn_d8_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {
@@ -135,7 +134,7 @@ pub fn bb_and_donuts<'info>(
         1,
     );
 
-    let _burn_D9_tx = anchor_spl::token::burn(
+    let _burn_d9_tx = anchor_spl::token::burn(
         CpiContext::new(
             token_program.to_account_info(),
             anchor_spl::token::Burn {

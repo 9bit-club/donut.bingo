@@ -1,6 +1,10 @@
 use crate::BBRules;
 use anchor_lang::prelude::*;
 
+pub fn get_admin() -> Pubkey {
+    return Pubkey::new(b"5xoiEAwcXa7drut8TFDPtYnoyAkyUZNgZTrRxE3koJY7");
+}
+
 pub fn validate_bb_and_donuts(
     rules: Box<Account<BBRules>>,
     bb_mint: Pubkey,

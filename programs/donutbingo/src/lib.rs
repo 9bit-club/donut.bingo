@@ -6,7 +6,8 @@ use anchor_spl::token::{
 };
 mod bingolist;
 mod burn;
-use anchor_spl::{associated_token, token};
+use anchor_spl::token;
+use solana_program::pubkey::Pubkey;
 
 declare_id!("5xoiEAwcXa7drut8TFDPtYnoyAkyUZNgZTrRxE3koJY7");
 
@@ -17,8 +18,8 @@ pub mod donutbingo {
 
     pub fn bingo(
         ctx: Context<BingoContext>,
-        rules_bump: u8,
-        treasury_bump: u8,
+        _rules_bump: u8,
+        _treasury_bump: u8,
         bingo_bump: u8,
     ) -> Result<()> {
         msg!("Verifying selected donuts");
@@ -39,7 +40,7 @@ pub mod donutbingo {
         }
 
         msg!("Burning donuts + BB");
-        let burn_tx = burn::bb_and_donuts(
+        let _burn_tx = burn::bb_and_donuts(
             ctx.accounts.token_program.clone(),
             ctx.accounts.player.clone(),
             ctx.accounts.bb_mint.clone(),
@@ -152,7 +153,10 @@ pub struct RewardsContext<'info> {
     )]
     pub treasury: Account<'info, TokenAccount>,
 
-    #[account(mut)]
+    #[account(
+        mut,
+        address = bingolist::get_admin() @ DonutErrorCode::WrongCombination
+    )]
     pub creator: Signer<'info>,
     #[account(mut)]
     pub reward_account: Box<Account<'info, TokenAccount>>,
